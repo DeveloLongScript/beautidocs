@@ -10,6 +10,7 @@
 	let topAppBar: TopAppBarComponentDev;
 	import Drawer, { AppContent, Content, Header, Title, Subtitle, Scrim } from '@smui/drawer';
 	import IconButton from '@smui/icon-button';
+	import ContentSvelte from './content.svelte';
 	import List, { Item, Text, Graphic, Separator, Subheader } from '@smui/list';
 	import { H6 } from '@smui/common/elements';
 	let open = false;
@@ -59,7 +60,7 @@
 				</Row>
 			</TopAppBar>
 			<AutoAdjust {topAppBar}>
-				<Content1 />
+				<ContentSvelte />
 			</AutoAdjust>
 		</main>
 	</AppContent>
