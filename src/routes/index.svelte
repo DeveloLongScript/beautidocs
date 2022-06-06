@@ -6,6 +6,7 @@
 	import type { TopAppBarComponentDev } from '@smui/top-app-bar';
 	import { Label } from '@smui/tab';
 	import Content1 from "./content.svelte";
+	import Drawer2 from "./drawer.svelte";
 	import TopAppBar, { Row, Section, AutoAdjust } from '@smui/top-app-bar';
 	let topAppBar: TopAppBarComponentDev;
 	import Drawer, { AppContent, Content, Header, Title, Subtitle, Scrim } from '@smui/drawer';
@@ -14,11 +15,7 @@
 	import List, { Item, Text, Graphic, Separator, Subheader } from '@smui/list';
 	import { H6 } from '@smui/common/elements';
 	let open = false;
-	let active = 'Home';
-	function setActive(value: string) {
-		active = value;
-		open = false;
-	}
+	
 </script>
 
 <div class="drawer-container">
@@ -26,21 +23,12 @@
 		  It adds a style for absolute positioning. -->
 	<Drawer variant="modal" fixed={false} bind:open>
 		<Header>
-			<Title>BeautiDocs Example</Title>
+			<Title>Powered by BeautiDocs</Title>
 			<Subtitle>A docs platform that looks better.</Subtitle>
 		</Header>
 		<Content>
 			<List>
-				<Item
-					href="javascript:void(0)"
-					on:click={() => {
-						setActive('Home');
-					}}
-					activated={active === 'Home'}
-				>
-					<Graphic class="material-icons" aria-hidden="true">home</Graphic>
-					<Text>Home</Text>
-				</Item>
+				<Drawer2 />
 			</List>
 		</Content>
 	</Drawer>
